@@ -14,6 +14,15 @@ const myApp = createApp({
         times: 10,
     }),
 
+    created() {
+        for (let i = 0; i < this.times; i++) {
+            axios.get(endpoint)
+                .then((res) => {
+                    this.emails.push(res['data']['response']);
+                })
+        }
+    }
+
 })
 
 myApp.mount('#root');

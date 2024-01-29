@@ -37,9 +37,16 @@
 
 <body>
     <div id="root">
-        <div class="container mt-5 text-center">
-            <ul class="list-group">
-                <li class="list-group-item fw-bold">gianluca.maffucci@hotmail.com</li>
+        <div v-if="emails.length === times" class="container mt-5 text-center">
+
+            <!-- Titolo -->
+            <h2>{{title}}</h2>
+
+            <!-- Lista -->
+            <ul class=" list-group">
+
+                <!!-- Ciclo per renderizzare gli indirizzi mail -->
+                    <li v-for="(email, i) in emails" :keyword="i" class="list-group-item fw-bold">{{email}}</li>
             </ul>
         </div>
     </div>
