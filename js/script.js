@@ -14,12 +14,20 @@ const myApp = createApp({
         times: 10,
     }),
 
-    created() {
-        for (let i = 0; i < this.times; i++) {
+    methods: {
+        fetchEmails() {
             axios.get(endpoint)
+
+                // Intercetta la chiamata per rispondere
                 .then((res) => {
                     this.emails.push(res['data']['response']);
                 })
+        }
+    },
+
+    created() {
+        for (let i = 0; i < this.times; i++) {
+            this.fetchEmails();
         }
     }
 

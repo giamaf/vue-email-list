@@ -46,7 +46,7 @@
             <ul class=" list-group">
 
                 <!!-- Ciclo per renderizzare gli indirizzi mail -->
-                    <li v-for="(email, i) in emails" :keyword="i" class="list-group-item fw-bold">{{email}}</li>
+                    <li v-for="(email, i) in emails" :key="i" class="list-group-item ">{{email}}</li>
             </ul>
         </div>
     </div>
